@@ -1,0 +1,26 @@
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\appsettings.Development.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\appsettings.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Biblioteca REST API.exe
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Biblioteca REST API.deps.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Biblioteca REST API.runtimeconfig.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Biblioteca REST API.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Biblioteca REST API.pdb
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.AssemblyInfoInputs.cache
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.AssemblyInfo.cs
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.csproj.CoreCompileInputs.cache
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.MvcApplicationPartsAssemblyInfo.cache
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.sourcelink.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets.build.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets.development.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets\msbuild.Biblioteca REST API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets\msbuild.build.Biblioteca REST API.props
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Biblioteca REST API.props
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Biblioteca REST API.props
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\scopedcss\bundle\Biblioteca REST API.styles.css
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\refint\Biblioteca REST API.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.pdb
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.genruntimeconfig.cache
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\ref\Biblioteca REST API.dll
