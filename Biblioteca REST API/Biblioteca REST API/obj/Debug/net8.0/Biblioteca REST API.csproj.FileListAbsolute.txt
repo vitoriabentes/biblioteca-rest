@@ -24,3 +24,14 @@ C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\ne
 C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.pdb
 C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.genruntimeconfig.cache
 C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\ref\Biblioteca REST API.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\MySqlConnector.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.csproj.AssemblyReference.cache
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Bibliote.098B457C.Up2Date
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Projetos\biblioteca-rest\Biblioteca REST API\Biblioteca REST API\obj\Debug\net8.0\Biblioteca REST API.MvcApplicationPartsAssemblyInfo.cs

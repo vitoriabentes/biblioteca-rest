@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Biblioteca_REST_API.Models;
 using Biblioteca_REST_API.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -5,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Biblioteca_REST_API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1")]
+    [Route("api/[controller]/v{version:ApiVersion}")]
     public class PersonController : ControllerBase
     {
 
