@@ -1,13 +1,14 @@
-﻿using Biblioteca_REST_API.Models;
+﻿
+using Biblioteca_REST_API.Data.VO;
 
 namespace Biblioteca_REST_API.Business
 {
     public interface IBookBusiness
     {
-        Book Create(Book book);
-        Book Update(Book book);
+        BookVO Create(BookVO book);
+        BookVO Update(BookVO book);
         void Delete(long id);
-        List<Book> FindAll();
-        Book FindById(long id);
+        List<BookVO> FindAll();
+        BookVO FindById(long id);
     }
 }

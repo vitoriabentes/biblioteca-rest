@@ -1,6 +1,6 @@
 ﻿using Asp.Versioning;
 using Biblioteca_REST_API.Business;
-using Biblioteca_REST_API.Models;
+using Biblioteca_REST_API.Data.VO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca_REST_API.Controllers
@@ -34,14 +34,14 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Book book)
+        public IActionResult Create([FromBody] BookVO book)
         {
             if (book is null) return BadRequest();
             return Ok(_bookBusiness.Create(book));
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Book book)
+        public IActionResult Update([FromBody] BookVO book)
         {
             if (book is null) return BadRequest();
             return Ok(_bookBusiness.Update(book));
