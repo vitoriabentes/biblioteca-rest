@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <Folder Include="DB\Migrations\" />
-    <Folder Include="DB\Database\" />
+    <Folder Include="DB\Dataset\" />
   </ItemGroup>
 
 </Project>

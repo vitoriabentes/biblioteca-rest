@@ -36,14 +36,14 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpPost]
-        public IActionResult Create([FromBody] Person person)
+        public IActionResult Create([FromBody] T person)
         {
             if (person is null) return BadRequest();
             return Ok(_personBusiness.Create(person));
         }
         
         [HttpPut]
-        public IActionResult Update([FromBody] Person person)
+        public IActionResult Update([FromBody] T person)
         {
             if (person is null) return BadRequest();
             return Ok(_personBusiness.Update(person));

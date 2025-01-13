@@ -4,10 +4,10 @@ namespace Biblioteca_REST_API.Business
 {
     public interface IPersonBusiness
     {
-        Person Create(Person person);
-        Person FindById(long id);
-        List<Person> FindAll();
-        Person Update(Person person);
+        T Create(T person);
+        T FindById(long id);
+        List<T> FindAll();
+        T Update(T person);
         void Delete(long id);
 
     }

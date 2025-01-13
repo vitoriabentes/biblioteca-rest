@@ -1,22 +1,25 @@
-﻿using Biblioteca_REST_API.Models;
+﻿using Biblioteca_REST_API.Models.Base;
 using Biblioteca_REST_API.Models.Context;
+using Microsoft.EntityFrameworkCore;
 
-namespace Biblioteca_REST_API.Repository.Implementations
+namespace Biblioteca_REST_API.Repository.Generic
 {
-    public class PersonRepositoryImplementation : IRepository
+    public class GenericRepository<T> : IRepository<T> where T : BaseEntity
     {
         private MySQLContext _context;
+        private DbSet<T> dataset;
 
-        public PersonRepositoryImplementation(MySQLContext context)
+        public GenericRepository(MySQLContext context)
         {
             _context = context;
+            dataset = _context.Set<T>();
         }
 
-        public T Create(T person)
+        public T Create(T item)
         {
             try
             {
-                _context.Persons.Add(person);
+                dataset.Add(item);
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -24,18 +27,18 @@ namespace Biblioteca_REST_API.Repository.Implementations
 
                 throw ex;
             }
-            return person;
+            return item;
         }
 
-        public T Update(T person)
+        public T Update(T item)
         {
-            if (!Exists(person.Id)) return null;
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
+            if (!Exists(item.Id)) return null;
+            var result = dataset.SingleOrDefault(i => i.Id.Equals(item.Id));
             if (result is not null)
             {
                 try
                 {
-                    _context.Entry(result).CurrentValues.SetValues(person);
+                    _context.Entry(result).CurrentValues.SetValues(item);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -44,17 +47,17 @@ namespace Biblioteca_REST_API.Repository.Implementations
                     throw ex;
                 }
             }
-            return person;
+            return item;
         }
 
         public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            var result = dataset.SingleOrDefault(i => i.Id.Equals(id));
             if (result is not null)
             {
                 try
                 {
-                    _context.Persons.Remove(result);
+                    dataset.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -67,17 +70,17 @@ namespace Biblioteca_REST_API.Repository.Implementations
 
         public List<T> FindAll()
         {
-            return _context.Persons.ToList();
+            return dataset.ToList();
         }
 
         public T FindById(long id)
         {
-            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            return dataset.SingleOrDefault(i => i.Id.Equals(id));
         }
 
         public bool Exists(long id)
         {
-            return _context.Persons.Any(p => p.Id.Equals(id));
+            return dataset.Any(i => i.Id.Equals(id));
         }
     }
 }

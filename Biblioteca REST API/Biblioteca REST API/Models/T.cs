@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Biblioteca_REST_API.Models
 {
     [Table("person")]
-    public class Person
+    public class T
     {
         [Column("id")]
         public long Id { get; set; }

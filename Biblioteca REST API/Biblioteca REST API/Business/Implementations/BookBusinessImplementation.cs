@@ -1,26 +1,25 @@
 ﻿using Biblioteca_REST_API.Models;
-using Biblioteca_REST_API.Models.Context;
 using Biblioteca_REST_API.Repository;
 
 namespace Biblioteca_REST_API.Business.Implementations
 {
-    public class PersonBusinessImplementation : IPersonBusiness
+    public class BookBusinessImplementation : IBookBusiness
     {
-        private readonly IRepository _repository;
+        private readonly IBookRepository _repository;
 
-        public PersonBusinessImplementation(IRepository repository)
+        public BookBusinessImplementation(IBookRepository repository)
         {
             _repository = repository;
         }
 
-        public T Create(T person)
+        public Book Create(Book book)
         {
-            return _repository.Create(person);
+            return _repository.Create(book);  
         }
 
-        public T Update(T person)
+        public Book Update(Book book)
         {
-            return _repository.Update(person);
+            return _repository.Update(book);
         }
 
         public void Delete(long id)
@@ -28,12 +27,12 @@ namespace Biblioteca_REST_API.Business.Implementations
             _repository.Delete(id);
         }
 
-        public List<T> FindAll()
+        public List<Book> FindAll()
         {
             return _repository.FindAll();
         }
 
-        public T FindById(long id)
+        public Book FindById(long id)
         {
             return _repository.FindById(id);
         }
