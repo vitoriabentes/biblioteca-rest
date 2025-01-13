@@ -1,13 +1,13 @@
 ﻿using Biblioteca_REST_API.Models;
 using Biblioteca_REST_API.Models.Context;
 
-namespace Biblioteca_REST_API.Services.Implementations
+namespace Biblioteca_REST_API.Repository.Implementations
 {
-    public class PersonServiceImplementation : IPersonService
+    public class PersonRepositoryImplementation : IPersonRepository
     {
         private MySQLContext _context;
 
-        public PersonServiceImplementation(MySQLContext context)
+        public PersonRepositoryImplementation(MySQLContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace Biblioteca_REST_API.Services.Implementations
 
         public Person Update(Person person)
         {
-            if (!Exists(person.Id)) return new Person();
+            if (!Exists(person.Id)) return null;
             var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
             if (result is not null)
             {
@@ -75,7 +75,7 @@ namespace Biblioteca_REST_API.Services.Implementations
             return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
         }
 
-        private bool Exists(long id)
+        public bool Exists(long id)
         {
             return _context.Persons.Any(p => p.Id.Equals(id));
         }

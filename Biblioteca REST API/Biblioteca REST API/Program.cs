@@ -1,7 +1,12 @@
+using Biblioteca_REST_API.Business;
+using Biblioteca_REST_API.Business.Implementations;
 using Biblioteca_REST_API.Models.Context;
-using Biblioteca_REST_API.Services;
-using Biblioteca_REST_API.Services.Implementations;
+using Biblioteca_REST_API.Repository;
+using Biblioteca_REST_API.Repository.Implementations;
+using EvolveDb;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +18,15 @@ var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
 builder.Services.AddDbContext<MySQLContext>(options => options
 .UseMySql(connection, new MySqlServerVersion(new Version(8,0,39))));
 
+if (builder.Environment.IsDevelopment())
+{
+    MigrateDatabase(connection);
+}
+
 builder.Services.AddApiVersioning();
 
-builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
+builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
+builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
 
 var app = builder.Build();
 
@@ -28,3 +39,22 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void MigrateDatabase(string connection)
+{
+    try
+    {
+        var evolveConnection = new MySqlConnection(connection);
+        var evolve = new Evolve(evolveConnection, Log.Information)
+        {
+            Locations = new List<string> { "DB/Migrations", "DB/Dataset" },
+            IsEraseDisabled = true,
+        };
+        evolve.Migrate();
+    }
+    catch (Exception ex)
+    {
+        Log.Error("Database migration failed", ex);
+        throw;
+    }
+}
