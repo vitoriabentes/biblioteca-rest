@@ -1,15 +1,13 @@
 ﻿
 
+using Biblioteca_REST_API.Models.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Biblioteca_REST_API.Models
 {
     [Table("person")]
-    public class T
+    public class Person : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }
-
         [Column("first_name")]
         public string FirstName { get; set; }
 

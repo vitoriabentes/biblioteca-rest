@@ -47,7 +47,11 @@ namespace Biblioteca_REST_API.Repository.Generic
                     throw ex;
                 }
             }
-            return item;
+            else
+            {
+                return null;
+            }
+            return result;
         }
 
         public void Delete(long id)

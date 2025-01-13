@@ -6,19 +6,19 @@ namespace Biblioteca_REST_API.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private readonly IRepository _repository;
+        private readonly IRepository<Person> _repository;
 
-        public PersonBusinessImplementation(IRepository repository)
+        public PersonBusinessImplementation(IRepository<Person> repository)
         {
             _repository = repository;
         }
 
-        public T Create(T person)
+        public Person Create(Person person)
         {
             return _repository.Create(person);
         }
 
-        public T Update(T person)
+        public Person Update(Person person)
         {
             return _repository.Update(person);
         }
@@ -28,12 +28,12 @@ namespace Biblioteca_REST_API.Business.Implementations
             _repository.Delete(id);
         }
 
-        public List<T> FindAll()
+        public List<Person> FindAll()
         {
             return _repository.FindAll();
         }
 
-        public T FindById(long id)
+        public Person FindById(long id)
         {
             return _repository.FindById(id);
         }

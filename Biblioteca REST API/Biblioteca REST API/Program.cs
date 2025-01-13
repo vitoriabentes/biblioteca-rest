@@ -3,7 +3,6 @@ using Biblioteca_REST_API.Business.Implementations;
 using Biblioteca_REST_API.Models.Context;
 using Biblioteca_REST_API.Repository;
 using Biblioteca_REST_API.Repository.Generic;
-using Biblioteca_REST_API.Repository.Implementations;
 using EvolveDb;
 using Microsoft.EntityFrameworkCore;
 using MySqlConnector;
@@ -26,9 +25,7 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddApiVersioning();
 
-builder.Services.AddScoped<IRepository, PersonRepositoryImplementation>();
 builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-builder.Services.AddScoped<IBookRepository, BookRepositoryImplementation>();
 builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(GenericRepository<>));
 
