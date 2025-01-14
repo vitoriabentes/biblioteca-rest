@@ -2,6 +2,7 @@ using Asp.Versioning;
 using Biblioteca_REST_API.Business;
 using Microsoft.AspNetCore.Mvc;
 using Biblioteca_REST_API.Data.VO;
+using Biblioteca_REST_API.Hypermedia.Filters;
 
 namespace Biblioteca_REST_API.Controllers
 {
@@ -21,12 +22,14 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpGet]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindAll()
         {
             return Ok(_personBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindById(long id)
         {
             var person = _personBusiness.FindById(id);
@@ -35,6 +38,7 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpPost]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Create([FromBody] PersonVO person)
         {
             if (person is null) return BadRequest();
@@ -42,6 +46,7 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpPut]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Update([FromBody] PersonVO person)
         {
             if (person is null) return BadRequest();

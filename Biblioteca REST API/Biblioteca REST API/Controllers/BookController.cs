@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Biblioteca_REST_API.Business;
 using Biblioteca_REST_API.Data.VO;
+using Biblioteca_REST_API.Hypermedia.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Biblioteca_REST_API.Controllers
@@ -20,12 +21,14 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpGet]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindAll() 
         {
             return Ok(_bookBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindById(long id)
         {
             var book = _bookBusiness.FindById(id);
@@ -34,6 +37,7 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpPost]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Create([FromBody] BookVO book)
         {
             if (book is null) return BadRequest();
@@ -41,6 +45,7 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpPut]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Update([FromBody] BookVO book)
         {
             if (book is null) return BadRequest();
