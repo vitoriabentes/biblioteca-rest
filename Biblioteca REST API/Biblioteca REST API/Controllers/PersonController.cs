@@ -3,11 +3,14 @@ using Biblioteca_REST_API.Business;
 using Microsoft.AspNetCore.Mvc;
 using Biblioteca_REST_API.Data.VO;
 using Biblioteca_REST_API.Hypermedia.Filters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Biblioteca_REST_API.Controllers
 {
-    [ApiController]
+    
     [ApiVersion("1")]
+    [ApiController]
+    [Authorize("Bearer")]
     [Route("api/[controller]/v{version:ApiVersion}")]
     public class PersonController : ControllerBase
     {
@@ -22,6 +25,10 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindAll()
         {
@@ -29,6 +36,10 @@ namespace Biblioteca_REST_API.Controllers
         }
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult FindById(long id)
         {
@@ -38,6 +49,9 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpPost]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Create([FromBody] PersonVO person)
         {
@@ -46,6 +60,9 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpPut]
+        [ProducesResponseType((200), Type = typeof(PersonVO))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Update([FromBody] PersonVO person)
         {
@@ -54,6 +71,9 @@ namespace Biblioteca_REST_API.Controllers
         }
         
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(long id)
         {
             _personBusiness.Delete(id);
